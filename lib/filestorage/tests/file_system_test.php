@@ -925,7 +925,7 @@ class core_files_file_system_testcase extends advanced_testcase {
         $fs->method('get_remote_path_from_storedfile')
             ->willReturn(__FILE__);
 
-        $this->expectException('coding_exception', 'Unexpected file handle type');
+        $this->setExpectedException('coding_exception', 'Unexpected file handle type');
         $fs->get_content_file_handle($file, -1);
     }
 
