@@ -149,8 +149,8 @@ class core_files_file_system_filedir_testcase extends advanced_testcase {
             ->chown(\org\bovigo\vfs\vfsStream::OWNER_USER_2);
 
         // This should generate an exception.
-        $this->setExpectedExceptionRegexp('file_exception',
-            '/Can not create local file pool directories, please verify permissions in dataroot./');
+        $this->setExpectedException('file_exception',
+            'Can not create local file pool directories, please verify permissions in dataroot.');
 
         new file_system_filedir();
     }
@@ -170,8 +170,8 @@ class core_files_file_system_filedir_testcase extends advanced_testcase {
             ->chown(\org\bovigo\vfs\vfsStream::OWNER_USER_2);
 
         // This should generate an exception.
-        $this->setExpectedExceptionRegexp('file_exception',
-            '/Can not create local file pool directories, please verify permissions in dataroot./');
+        $this->setExpectedException('file_exception',
+            'Can not create local file pool directories, please verify permissions in dataroot.');
 
         new file_system_filedir();
     }
@@ -693,8 +693,8 @@ class core_files_file_system_filedir_testcase extends advanced_testcase {
         // Setup the filedir.
         $vfileroot = $this->setup_vfile_root();
 
-        $this->setExpectedExceptionRegexp('file_exception',
-            '/Cannot read file\. Either the file does not exist or there is a permission problem\./');
+        $this->setExpectedException('file_exception',
+            'Cannot read file. Either the file does not exist or there is a permission problem.');
 
         $fs = new file_system_filedir();
         $fs->add_file_from_path(\org\bovigo\vfs\vfsStream::url('filedir/file'));
