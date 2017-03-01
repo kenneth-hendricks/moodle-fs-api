@@ -694,7 +694,7 @@ class core_files_file_system_filedir_testcase extends advanced_testcase {
         $vfileroot = $this->setup_vfile_root();
 
         $this->setExpectedException('file_exception',
-            'Cannot read file. Either the file does not exist or there is a permission problem.');
+            'Can not read file, either file does not exist or there are permission problems');
 
         $fs = new file_system_filedir();
         $fs->add_file_from_path(\org\bovigo\vfs\vfsStream::url('filedir/file'));
